@@ -1,0 +1,281 @@
+<app-header></app-header>
+<div class="reportContainer">
+    <h1>It’s Report Time</h1>
+    <small>lBS - Log based score</small><br> 
+    <small>PBS - Perception based score</small>
+    <div class="overallScoreCard main">
+      <div class="description main-text">
+        <p>My MetaCog Score</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque adipisci hic minus laudantium? Aspernatur</p>
+      </div>
+      <div class="score main">
+        <div class="lbs">
+          <p><span [innerHTML]="MetaLog"></span>%</p>
+          <small>LBS</small>
+        </div>
+        <div class="pbs">
+          <p><span [innerHTML]="MetaPBS"></span>%</p>
+          <small>PBS</small>
+        </div>
+      </div>
+      <span class="oval main">
+      </span>
+    </div>
+    <mat-tab-group (selectedTabChange)="tabClick($event)">
+      <mat-tab label="MetaCognition Components">
+        <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Knowledge about Cognition</mat-panel-title>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </mat-expansion-panel-header>
+          <div class="actionBar">  
+            <mat-chip-list>
+              <mat-chip selected>Total LBS: <span [innerHTML]="kocLog"></span>%</mat-chip>
+              <mat-chip selected>Total PBS: <span [innerHTML]="kocPBS"></span>%</mat-chip>
+            </mat-chip-list>
+            <mat-icon id="kocGraphIcon" matTooltip="Toggle Graph" matTooltipPosition="left" (click)="kocToggle()">assessment</mat-icon>
+          </div>
+          <div id="kocTheoryRepresentation">
+            <div id="decKnowledge" class="overallScoreCard">
+              <div class="description">
+                <p>Declarative Knowledge</p>
+                <p>The factual knowledge the learner needs before being able to process or use critical thinking related to the topic.</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="declarativeLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="declarativePBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+            <div id="proKnowledge" class="overallScoreCard">
+              <div class="description">
+                <p>Procedural knowledge</p>
+                <p>The application of knowledge for the purposes of completing a procedure or process, Knowledge about how to implement learning procedures (e.g. strategies)</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span [innerHTML]="proceduralLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span [innerHTML]="proceduralPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+            <div id="conKnowledge" class="overallScoreCard">
+              <div class="description">
+                <p>Conditional knowledge</p>
+                <p>The determination under what circumstances specific processes or skills should transfer, Knowledge about when and why to use learning procedures.</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="conditionalLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="conditionalPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+          </div>
+          <div id="kocGraphRepresentation" style="display: none;">
+              <canvas baseChart
+                      [datasets]="kocbarChartData"
+                      [labels]="kocbarChartLabels"
+                      [options]="kocbarChartOptions"
+                      [legend]="kocbarChartLegend"
+                      [chartType]="kocbarChartType">
+              </canvas>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Regulation of Cognition</mat-panel-title>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </mat-expansion-panel-header>
+          <div class="actionBar">
+            <mat-chip-list>
+              <mat-chip selected>Total LBS: <span [innerHTML]="rocLog">100</span>%</mat-chip>
+              <mat-chip selected>Total PBS: <span [innerHTML]="rocPBS">100</span>%</mat-chip>
+            </mat-chip-list>
+            <mat-icon id="rocGraphIcon" matTooltip="Toggle Graph" matTooltipPosition="left" (click)="rocToggle()">assessment</mat-icon>
+          </div>
+          <div id="rocTheoryRepresentation">
+            <div id="planning" class="overallScoreCard">
+              <div class="description">
+                <p>Planning</p>
+                <p>how you are good in Planning, goal setting, and allocating resources prior to learning</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="planningLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="planningPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+            <div id="infoMgmt" class="overallScoreCard">
+              <div class="description">
+                <p>Information Management Strategies </p>
+                <p>Skills and strategy sequences used to process information more efficiently (e.g., organizing, elaborating, summarizing, selective focusing). How do you manage all this.</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="infoMgmtLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="infoMgmtPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+            <div id="coMonitoring" class="overallScoreCard">
+              <div class="description">
+                <p>Comprehension Monitoring</p>
+                <p>Assessment of one’s learning or strategy use.</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="coMonitoringLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="coMonitoringPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+            <div id="debugStrat" class="overallScoreCard">
+              <div class="description">
+                <p>Debugging Strategies</p>
+                <p>Strategies used to correct comprehension and performance errors.</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="debugStratLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="debugStratPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+            <div id="evaluation" class="overallScoreCard">
+              <div class="description">
+                <p>Evaluation</p>
+                <p>Analysis of performance and strategy effectiveness after a learning episode.</p>
+              </div>
+              <div class="score">
+                <div class="lbs">
+                  <p><span  [innerHTML]="evaluationLog"></span>%</p>
+                  <small>LBS</small>
+                </div>
+                <div class="pbs">
+                  <p><span  [innerHTML]="evaluationPBS"></span>%</p>
+                  <small>PBS</small>
+                </div>
+              </div>
+              <span class="oval">
+              </span>
+            </div>
+          </div>
+          <div id="rocGraphRepresentation" style="display: none;">
+            <canvas baseChart
+            [datasets]="rocbarChartData"
+            [labels]="rocbarChartLabels"
+            [options]="rocbarChartOptions"
+            [legend]="rocbarChartLegend"
+            [chartType]="rocbarChartType">
+    </canvas>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion> 
+      </mat-tab>
+      <mat-tab label="Time Spent"> 
+        <div style="display: block;" class="mainTopicPie">
+          <h1>Topics</h1>
+          <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType">
+          </canvas>  
+        </div>
+        <div class="SubPieCharts">
+          <div>
+            <h1>Subtopics</h1>
+            <canvas baseChart height="500"
+              [data]="subpieChartData"
+              [labels]="subpieChartLabels"
+              [colors]="subpieChartColors"
+              [chartType]="subpieChartType">
+            </canvas>  
+          </div>
+          <div>
+            <h1>Resources</h1>
+            <canvas baseChart height="500"
+            [data]="respieChartData"
+            [labels]="respieChartLabels"
+            [colors]="respieChartColors"
+            [chartType]="respieChartType">
+            </canvas>  
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Resources usage"> 
+<pre><b>Data on Y axis: Represents Topic’s names</b>
+1. Classes and Objects	2. Classes and Methods
+3. Method Overloading   4. Method Overriding
+5. Inheritance          6. Polymorphism
+        </pre>
+        <div style="display: block;">
+          <canvas baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend"
+            [colors]="lineChartColors"
+            [chartType]="lineChartType"
+            >
+          </canvas>
+        </div>
+      </mat-tab>
+      <mat-tab label="Planning">
+        
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [colors]="planChartColors"
+          [chartType]="barChartType">
+        </canvas> 
+      </mat-tab>
+    </mat-tab-group>
+</div>

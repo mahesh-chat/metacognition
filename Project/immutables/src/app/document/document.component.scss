@@ -1,0 +1,327 @@
+@import '../base';
+
+#Frame{
+  width: 60%;
+  min-height: 100vh; 
+  // position: absolute; 
+  border: none;
+  margin-left: 20%;
+}
+#mydiv {
+    position: relative;
+    z-index: 9;
+    // background-color: #f1f1f1;
+    // border: 1px solid #d3d3d3;
+    text-align: center;
+    margin: 0 auto;
+    width: 900px;
+    max-width: 100%;
+    height: 400px;
+  
+    #mydivheader {
+      display: none;
+      padding: 10px;
+      cursor: move;
+      z-index: 10;
+      background-color: $main-color;
+      color: $white;
+
+    }
+}
+.cont{
+  padding: 20px;
+  // border: 1px solid red;
+  background-color: $bg;
+  border-radius: 10px;
+}
+.cont, .container-1{
+  width: 900px;
+  max-width: 100%;
+  margin: 50px auto;
+
+  h1{
+    color: $main-color;
+    font-size: 3rem;
+    max-width: 20ch;
+    line-height: 3.5rem;
+    font-weight: 500;
+  }
+  h2{
+    max-width: 25ch;
+    // margin-top: 30px;
+    font-size: 2rem;
+    color: $main-color;
+  }
+
+
+  .action-bar{
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    background-color: $bg;
+    // border: 1px solid red;
+    margin-bottom: 10px;
+    p{
+      display: inline-block;
+      // vertical-align: middle;
+    }
+    input{
+      width: 100px;
+      height: 30px;
+      font-family: $content-font;
+      padding: 0 10px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      margin-left: 10px;
+    }
+    button{
+      background-color: $main-color;
+      border: none;
+      outline: none;
+      color: $white;
+      padding: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+      border-radius: 8px;
+      height: 30px;
+      width: 30px;
+    }
+    button:nth-of-type(1){
+      span{
+        margin-left: 4px;
+      }
+    }
+    span{
+      font-size: 1.2rem;
+    }
+    p{
+      span{
+        font-size: 1rem;
+      }
+    }
+
+  }
+  .ng2-pdf-viewer-container{
+    // border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    // overflow-x: unset !important;
+  }
+}
+
+.container-1{
+  margin: 0 auto;
+}
+// Toggle Switch
+// ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+//   background-color: blue; /*replace with your color*/
+// }
+
+// ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+//   background-color: skyblue;  /*replace with your color*/
+// }
+
+// /* CSS to change 'Primary' color */
+
+// ::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+//   background-color: green;
+// }
+
+// ::ng-deep .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+//   // background-color: #ff99ff;
+//   background-color: $main-color !important;
+// }
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar{
+  background-color: $bg !important;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+  background-color: $main-color !important;
+}
+
+/* CSS to change 'Warn' color */
+
+// ::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+//   background-color: red;
+// }
+
+// ::ng-deep .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+//   background-color: #ffe066;
+// }
+.mat-menu-item{
+  font-family: $content-font !important;
+  color: $main-color !important;
+  font-size: 1.1rem;
+}
+.my_menu{
+  font-family: $content-font !important;
+  position: fixed !important;
+  top: 350px;
+  left: -25px;
+  color: $white;
+  background-color: $main-color;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  border-radius: 99999999999px !important;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.5) !important;
+  transition: all 0.3s cubic-bezier(0, 0, 0.3, 1);
+  z-index: 999;
+  outline: 0;
+  min-width: 0 !important;
+  line-height: 0 !important;
+  padding-left: 20px !important;
+
+}
+.mat_icon{
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  color: $main-color;
+}
+.mat_but{
+  padding-left: 48px !important;
+}
+.topic > .mat-menu-content {
+  background-color: white !important;
+  height: 100% !important;
+  position: fixed !important;
+  top: 60px !important;
+  z-index: 0 !important;
+  transition: all .2s ease-in-out !important;
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,.5) !important;
+}
+
+.mat-menu-panel.topic {
+   overflow: hidden;
+}
+
+.cdk-overlay-container{
+  position: fixed !important;
+  top: 0 !important;
+}
+
+.mat-elevation-z4{
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.menu-heading{
+  font-size: 2rem !important;
+  font-family: $heading2-font !important;
+  text-align: center !important;
+  margin-bottom: 25px !important;
+  font-weight: 600;
+   
+  &:hover{
+    background-color: transparent !important;
+    cursor: auto !important;
+  }
+}
+
+.first-menu{
+  margin: 12px auto !important;
+}
+
+.close-but{
+  float: right;
+  margin: 10px;
+  color: $main-color;
+  cursor: pointer;
+
+  &:hover{
+    color: red;
+  }
+}
+
+
+// StudyRoom css
+
+.doc-container{
+  min-height: calc(100vh - 70px);
+  height: fit-content;
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  // color: $main-color;
+  background-color: #f5f6fe59;
+  z-index: -1;
+  text-align: justify;
+  font-size: 1rem;
+  box-shadow: 0 0 1px 0 gray;
+}
+.heading{
+  font-family: $heading2-font;
+  font-size: 3rem;
+  margin-top: 1rem !important;
+  font-weight: bolder;
+  color: $main-color;
+}
+.para-one{
+  font-family: $sub-heading-font;
+  margin-top: 4rem !important;
+  font-size: 2rem;
+  font-weight: lighter;
+  letter-spacing: 0.05rem;
+  line-height: 1em;
+  color: $main-color;
+}
+.paras{
+  font-family: $content-font;
+  margin: 0 2rem auto !important;
+  line-height: 1.8em;
+  font-size: 1.4em;
+}
+.closing-para{
+  font-family: $sub-heading-font;
+  font-size: 1.3em;
+  line-height: 2em;
+  margin: 2rem 2rem 0 !important;
+  // padding: 1em;
+  border-radius: .5em;
+  // background-color: #cde0ff28;
+}
+.paras-container{
+  margin-top: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+ //border: 1px solid red ;
+  img{
+      max-width: 100%;
+      width: 300px;
+      height: 300px;
+      margin-right: 30px;
+      border: 1px solid $main-color;
+  }
+  p{
+      margin: 0 2rem;
+  }
+}
+.actions{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  button{
+      font-family: $heading-font;
+      font-size: 1.1rem;
+      background-color: $main-color;
+      padding: 1rem;
+      color: $white;
+      border: 1px solid transparent;
+      cursor: pointer;
+      border-radius: .25rem;
+      transition:all 0.8s cubic-bezier(0, 0, 0.2, 1.5);
+      
+      &:hover{
+          color: $main-color;
+          background-color: transparent;
+          border: 1px solid $main-color;
+      }
+  }
+}

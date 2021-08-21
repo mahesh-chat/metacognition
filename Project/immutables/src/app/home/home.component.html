@@ -1,0 +1,55 @@
+<main>
+    <div class="box1 box">
+        <div class="card-big">
+            <h1>MetaCognition</h1>
+            <p>An increasingly useful mechanism to enhance student learning, both for immediate outcomes and for helping students to understand their own learning processes.
+            </p>
+            <div *ngIf="!auth.isLoggedIn();else elseBlock">
+                <button (click) = "login()">Login</button>
+                <button routerLink="/About">Know More</button>
+            </div>
+            <ng-template #elseBlock>
+                <button (click) = "logout()">Logout</button>
+                <button routerLink="/About">Know More</button>
+            </ng-template>
+            <div class="social-icons">
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="box2 box" routerLink="/Studyroom">
+        <div class="card">
+            <span class="material-icons">menu_book</span>
+            <h2>Studyroom</h2>
+            <p>Want to learn something? We have variety of materials for you to study.</p>
+        </div>    
+    </div>
+    <div class="box3 box" routerLink="/SelfAssess">
+        <div class="card">
+            <span class="material-icons">local_library</span>
+                <h2>Self Assess Test</h2>
+            <p>What do you think about your own metacognitive processes?</p>
+        </div>
+    </div>
+    <div class="box4 box" routerLink="/Report">
+        <div class="card">
+            <span class="material-icons">equalizer</span>
+            <h2>Report</h2>
+            <p>We have a made personalized report, just for you. Let's have a look at it.</p>
+        </div>
+
+    </div>
+    <div class="box5 box" routerLink="/Topics">
+        <div class="card">
+            <span class="material-icons">question_answer</span>
+            <h2>Quiz</h2>
+            <p>You think you know everything? Let's have a test</p>
+        </div>
+    </div>
+    
+</main>
+<!-- <app-fab></app-fab>
+<app-sidebar></app-sidebar>  -->

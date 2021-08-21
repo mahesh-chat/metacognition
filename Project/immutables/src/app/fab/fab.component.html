@@ -1,0 +1,83 @@
+<div class="fab" (click)="toggleFab()">
+    <div class="action">
+        <!-- <span class="material-icons">add</span> -->
+        <span class="material-icons" id="add">more_vert</span>
+        <span class="material-icons" id="remove" style="display: none;">close</span>
+    </div>
+    <div class="btns">
+        <a class="btn" (click)="onPress()" matTooltip="Let's Plan"
+        [matTooltipPosition]="'left'">
+            <span class="material-icons">menu_book</span>
+        </a>
+        <a class="btn" routerLink="/SelfAssess"  matTooltip="Self Assesment"
+        [matTooltipPosition]="'left'">
+            <span class="material-icons">question_answer</span>
+        </a>
+        <a class="btn" routerLink="/ContactUs"  matTooltip="QNA"
+        [matTooltipPosition]="'left'">
+            <span class="material-icons">help_outline</span>
+
+        </a>
+    </div>
+</div>
+<div id="comp-render" *ngIf="display">
+    <!-- <button class="close-modal">quit</button> -->
+    <!-- <app-planning></app-planning> -->
+    <div class="plan-cont" id="myModal">
+        <div class="modal-content">
+            <div class="header">
+                <button (click)="onPress()" class="close-btn"><Span class="material-icons">close</Span></button>
+                <h1>Plan your Schedule</h1>
+            </div>
+            <div class="content">
+                <mat-slide-toggle id="history" (change)="onToggle($event)">History</mat-slide-toggle>
+                <p class="headings first">Introduction</p>
+                <div class="topic">
+                    <div class="subtopic">
+                    <p>Classes and objects</p>
+                    <input id="1" placeholder="Enter No of hours" type="number" (input)="totaldaysChange($event)" min="0">
+                    <p class="history-data hide">Prev Plan: 2 Hours</p>
+                </div>
+            </div>
+            <hr>
+            <p class="headings second">Classes Methods</p>
+            <div class="topic">
+                <div class="subtopic">
+                    <p>Methods</p>
+                    <input id="2" placeholder="Enter No of hours" type="number" min="0" (input)="totaldaysChange($event)">
+                    <p class="history-data hide">Prev Plan: 1 Hours</p>
+                </div>
+                <div class="subtopic"> 
+                    <p>Overloading</p>
+                    <input id="3" placeholder="Enter No of hours" type="number" min="0" (input)="totaldaysChange($event)">
+                    <p class="history-data hide">Prev Plan: 1 Hours</p>
+                </div>
+                <div class="subtopic"> 
+                    <p>Overriding</p>
+                    <input id="4" placeholder="Enter No of hours" type="number" min="0" (input)="totaldaysChange($event)">
+                    <p class="history-data hide">Prev Plan: 3 Hours</p>
+                </div>
+            </div>
+            <hr>
+            <p class="headings third">Advanced Concepts </p>
+            <div class="topic">
+                <div class="subtopic">
+                    <p>Inheritance</p>
+                    <input id="5" placeholder="Enter No of hours" type="number" min="0" (input)="totaldaysChange($event)">
+                    <p class="history-data hide">Prev Plan: 2 Hours</p>
+                </div>
+                <div class="subtopic"> 
+                    <p>Polymorphism</p>
+                    <input id="6" placeholder="Enter No of hours" type="number" min="0" (input)="totaldaysChange($event)">
+                    <p class="history-data hide">Prev Plan: 1 Hours</p>
+                </div>
+            </div>
+            <hr>
+            <h3>Total Hours: <span [innerHTML]="totalDays"></span></h3>
+        </div>
+        <div class="footer">
+            <button (click)="submitResponse()">Submit</button>
+        </div>
+        </div>
+    </div>
+</div>

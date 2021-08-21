@@ -1,0 +1,30 @@
+{
+    "/users": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/quiz": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/pdf": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/logsApi": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/planning":{
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/inventory":{
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/report":{
+        "target": "http://localhost:3000",
+        "secure": false
+    }
+}

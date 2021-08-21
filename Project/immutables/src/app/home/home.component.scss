@@ -1,0 +1,134 @@
+@import '../base';
+
+main{
+    display: grid;
+    gap: 10px;
+    height: 100vh;
+    padding: 0 20px;
+    grid-template-areas: 
+    "box1 box2 box3"
+    "box1 box4 box5";
+    background-color: #F5F6FE;
+    h1, h2{
+        font-family: $heading-font;
+    }
+    .box{
+        // height: 100%;
+        // width: 450px;
+        max-width: 450px;
+        margin: 20px;
+        padding: 20px 35px;
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        background-color: $white;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: box-shadow .3s ease;
+    }
+    .card, .card-big{
+        // padding: 60px 30px;
+        span{
+            color: $main-color;
+            font-size: 60px;
+            transform: translateX(-6px);
+        }
+        img{
+            width: 60px;
+            height: 60px;
+            border-radius: 150px;
+        }
+        .user {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+          
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        .one {
+            background-image: url('../../assets/potrait.png');
+        }
+        p{
+            font-size: 1rem;
+            // max-width: 45ch;
+        }
+    }
+    .box:hover{
+        box-shadow: 0 3px 14px -10px gray;
+    }
+    .card-big{
+        // padding-top: 200px;
+        // max-width: 450px;
+        text-justify: inter-word;
+        text-align: justify;
+        cursor: default;
+        h1{
+            margin: 0 !important;
+            font-weight: 500;
+        }
+        h1::first-letter {
+            font-size: 120%;
+            color: $main-color;
+          }
+        button{
+            font-family: $content-font;
+            background-color: $main-color;
+            color: $white;
+            border: 0;
+            font-size: 1rem;
+            border-radius: 100px;
+            width: fit-content;
+            padding: 8px 40px;
+            margin: 25px 5px 0 0;
+            cursor: pointer;
+        }
+        button:nth-of-type(2){
+            background-color: $white;
+            color: $main-color;
+            border: 1px solid $main-color;
+        }
+        button:hover{
+            box-shadow: 0px 10px 24px -12px rgba(0,0,0,0.75);
+        }
+        p{
+            font-size: 1.1rem;
+            margin: 25px 0 0;
+            // max-width: 40ch;
+            line-height: 24px;
+            
+        }
+    }
+}
+.box1{
+    grid-area: box1;
+    cursor: auto !important;
+}
+.box2{
+    grid-area: box2;
+}
+.box3{
+    grid-area: box3;
+}
+.box4{
+    grid-area: box4;
+}
+.box5{
+    grid-area: box5;
+}
+
+@media screen and (max-width: 900px) {
+    main {
+    //   background-color: lightgreen;
+      grid-template-areas: 
+      "box1 box1"
+      "box2 box3"
+      "box4 box5";
+      height: auto;
+      .box{
+        max-width: 100%;
+      }
+    }
+  }

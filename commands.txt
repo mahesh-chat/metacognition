@@ -1,0 +1,2 @@
+C:\Users\Mahesh Chat\Desktop\immutables\Project\immutables\src\server>nodemon server.js 
+C:\Users\Mahesh Chat\Desktop\immutables\Project\immutables>npm start

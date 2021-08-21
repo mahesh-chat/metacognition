@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/base';
+html, body { height: auto; }
+body { margin: 0;}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+    border-color:rgb(66, 134, 244); 
+}
+  
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+    color:rgb(66, 134, 244);
+    background-color:rgb(66, 134, 244) ;
+}
+  
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element{
+      background-color:#0079D7;
+}
